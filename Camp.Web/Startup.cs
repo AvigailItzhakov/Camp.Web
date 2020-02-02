@@ -13,6 +13,8 @@ namespace Camp.Web
 {
     public class Startup
     {
+        public const string CookieScheme = "YourSchemeName";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -29,6 +31,7 @@ namespace Camp.Web
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
+            services.AddSession();
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -45,10 +48,10 @@ namespace Camp.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
+            app.UseSession();
+            app.UseAuthentication();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

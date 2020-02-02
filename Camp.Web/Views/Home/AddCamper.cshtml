@@ -1,0 +1,39 @@
+﻿
+<div  style="margin-top:60px;" class="container">
+
+    <div class=" col-md-12">
+        <form method="post" action="/home/AddCamperToData">
+            <h1> Please enter a new camper</h1>
+            <input type="text" name="firstName" class="form-control" placeholder="First Name" />
+            <br />
+            <input type="text" name="lastName" class="form-control" placeholder="Last Name" />
+            <br />
+            <input type="text" name="age" class="form-control" placeholder="Age" />
+            <br />
+            <input type="date" class="form-control" name="birthday" placeholder="Birthday" />
+            <br />
+            <h3>Please enter some contact information for this camper</h3>
+            <input type="text" name="FatherFirstName" class="form-control" placeholder="Fathers First Name" />
+            <input type="text" name="FatherLastName" class="form-control" placeholder="Fathers Last Name" />
+            <input type="text" name="FatherPhoneNumber" class="form-control" placeholder="Fathers Phone Number" />
+            <br />
+            <input type="text" name="MotherFirstName" class="form-control" placeholder="Mother First Name" />
+            <input type="text" name="MotherLastName" class="form-control" placeholder="Mother Last Name" />
+            <input type="text" name="MotherPhoneNumber" class="form-control" placeholder="Mothers Phone Number " />
+            <br />
+            <input type="text" name="EmergencyContactFirstName" class="form-control" placeholder="Emergency Contact First Name" />
+            <input type="text" name="EmergencyContactLastName" class="form-control" placeholder="Emergency Contact Last Name" />
+            <input type="text" name="EmergencyContactPhoneNumber" class="form-control" placeholder="Emergency Contact Phone Number" />
+
+            <br />
+            <h5 class="col-md-5" >Allergies? </h5>
+            <input id="allergyCheckBox" type="checkbox" value="false" class="form-control" name="Allergies" />
+            <input id="alergyFood" type="text" name="AllergyFoods" disabled class="form-control" placeholder="Please list the foods.." />
+                <button class="btn btn-success">Submit</button>
+
+        </form>
+    </div>
+</div>
+@section scripts {
+    <script src="~/js/AddCamper.Js"></script>
+}

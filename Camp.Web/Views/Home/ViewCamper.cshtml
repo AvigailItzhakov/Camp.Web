@@ -1,0 +1,18 @@
+﻿@using Camp.Data
+@model Camper
+
+<div class="container">
+ <h3> @Model.FirstName @Model.LastName's Contact info </h3>
+    <h5>Father: @Model.FatherFirstName @Model.FatherLastName- #@Model.FatherPhoneNumber</h5>
+    <h5>Mother: @Model.MotherFirstName @Model.MotherLastName- #@Model.MotherPhoneNumber</h5>
+    <h5>Emergency Contact: @Model.EmergencyContactFirstName @Model.EmergencyContactLastName-# @Model.EmergencyContactPhoneNumber</h5>
+    <h5>Allergies: </h5>
+    @if(Model.Allergies==true)
+    {
+       <h7> @Model.AllergyFoods</h7>
+    }
+    else
+    {
+        <h7>This camper does not have allergies Baruch Hashem!</h7>
+    }
+</div>

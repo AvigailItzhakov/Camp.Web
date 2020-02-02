@@ -1,0 +1,32 @@
+﻿@using Camp.Data
+@model IEnumerable<Camper>
+<div class="container" style="margin-top:60px; ">
+    <table style=" font-size:large;  "  class="table-bordered table-hover table-striped row">
+        <tr style="font-size:medium;">
+            <th > Name</th>
+            <th>Age</th>
+            <th>Birthday</th>
+            <th>View Campers info </th>
+
+
+
+
+        </tr>
+        @foreach (Camper c in Model)
+        {
+            <tr>
+                <td>@c.FirstName  @c.LastName</td>
+                <td>@c.Age</td>
+                <td>@c.Birthday.ToShortDateString()</td>
+               
+                <td>
+                    <a href="/home/viewCamper?id=@c.Id"> View Campers contact info</a>
+                </td>
+            </tr>
+        }
+
+
+
+    </table>
+</div>
+
